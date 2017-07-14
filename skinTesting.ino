@@ -1,4 +1,6 @@
 // include the library code:
+#include <Wire.h>
+#include <Adafruit_Sensor.h>
 #include <LiquidCrystal.h>
 #include "DHT.h"
 
