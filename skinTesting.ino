@@ -44,7 +44,7 @@ void loop() {
   String strc = "Temp:";
   String strh = "Humidity";
   String str = strc + c + strh +h;
-  Serial.print(str);
+  Serial.println(str);
   
   // Print to LCD
   // set the cursor to column 0, line 1
