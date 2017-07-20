@@ -1,8 +1,8 @@
 // include the library code:
 #include <Wire.h>
-#include <Adafruit_Sensor.h>      //  https://github.com/adafruit/Adafruit_Sensor.git
+#include <Adafruit_Sensor.h>        /* https://github.com/adafruit/Adafruit_Sensor.git */
 #include <LiquidCrystal.h>  
-//#include <LiquidCrystal_I2C.h>
+//#include <LiquidCrystal_I2C.h>    /* https://bitbucket.org/fmalpartida/new-liquidcrystal/downloads/ */
 #include "DHT.h"
 
 // set the DHT Pin
