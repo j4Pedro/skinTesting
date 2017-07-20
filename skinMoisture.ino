@@ -76,6 +76,6 @@ void loop() {
   lcd.setCursor(0,1);
   lcd.print((c1+c2)/2);
   lcd.setCursor(7,1);
-  lcd.print(h1);
+  lcd.print((h1+h2)/2);
   }
  
