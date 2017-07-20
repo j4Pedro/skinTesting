@@ -24,7 +24,7 @@ DHT dht2(DHT2PIN, DHT2TYPE);
 
 void setup() {
   Serial.begin(9600); 
-  Serial.println("====skinTesting===");
+  Serial.println("==skinTesting==");
 
   dht1.begin();
   dht2.begin();
@@ -44,7 +44,8 @@ void loop() {
   // read temperature in Celsius
   float c1 = dht1.readTemperature();
   float c2 = dht2.readTemperature();
-
+  
+  //Sensor 1
   if (isnan(h1) || isnan(c1)) {
     Serial.println("Failed to read from Sensor1");
     lcd.print("Error_Sensor1");
@@ -52,11 +53,12 @@ void loop() {
   }else{
   // Print to Serial
   String strc1 = "Temp1:";
-  String strh1 = "Humidity1";
+  String strh1 = "Humidity1:";
   String str1 = strc1 + c1 + strh1 +h1;
   Serial.println(str1);
   }
   
+  //Sensor 2
   if (isnan(h2) || isnan(c2)) {
     Serial.println("Failed to read from Sensor2");
     lcd.print("Error_Sensor2");
@@ -64,10 +66,12 @@ void loop() {
   }else{
   // Print to Serial
   String strc2 = "Temp2:";
-  String strh2 = "Humidity2";
+  String strh2 = "Humidity2:";
   String str2 = strc2 + c2 + strh2 +h2;
   Serial.println(str2);
   }
+  Serial.println();
+  
   
   // Print to LCD
   // set the cursor to column 0, line 1
