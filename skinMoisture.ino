@@ -1,7 +1,7 @@
 // include the library code:
 #include <Wire.h>
-#include <Adafruit_Sensor.h>
-#include <LiquidCrystal.h>
+#include <Adafruit_Sensor.h>      //  https://github.com/adafruit/Adafruit_Sensor.git
+#include <LiquidCrystal.h>  
 //#include <LiquidCrystal_I2C.h>
 #include "DHT.h"
 
