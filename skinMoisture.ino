@@ -22,13 +22,17 @@ LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 DHT dht1(DHT1PIN, DHT1TYPE);
 DHT dht2(DHT2PIN, DHT2TYPE);
 
+//set Count row
+int count = 0;
+int ctRow = 0;
+
 void setup() {
   Serial.begin(9600); 
   Serial.println("==skinTesting==");
   
   //setting PLX-DAQ
   Serial.println("CLEARDATA");
-  Serial.println("LABEL,Temperture1,Humidity1,Temperture2,Humidity2");
+  Serial.println("LABEL,TIME,Temperture1,Humidity1,Temperture2,Humidity2");
   
   dht1.begin();
   dht2.begin();
@@ -78,7 +82,7 @@ void loop() {
   */
   }
   //print to excel by PLX-DAQ
-  Serial.print("DATA");
+  Serial.print("DATA,TIME,");
   Serial.print(",");
   Serial.print(c1);
   Serial.print(",");
@@ -87,7 +91,14 @@ void loop() {
   Serial.print(c2);
   Serial.print(",");
   Serial.println(h2);
-    
+  // Count row
+  ctRow++;
+  count++;
+  if (ctRow > 360) 
+   {
+    ctRow=0;
+    Serial.println("ROW,SET,2");
+   }  
   // Print to LCD
   // set the cursor to column 0, line 1
   // (note: line 1 is the second row, since counting begins with 0):
