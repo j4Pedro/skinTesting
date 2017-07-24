@@ -25,10 +25,13 @@ DHT dht2(DHT2PIN, DHT2TYPE);
 void setup() {
   Serial.begin(9600); 
   Serial.println("==skinTesting==");
-
+  
+  //setting PLX-DAQ
+  Serial.println("CLEARDATA");
+  Serial.println("LABEL,Temperture1,Humidity1,Temperture2,Humidity2");
+  
   dht1.begin();
   dht2.begin();
-  
   // set up the LCD's number of columns and rows: 
   lcd.begin(16, 2);
   // Print a message to the LCD.
@@ -52,10 +55,12 @@ void loop() {
     return;
   }else{
   // Print to Serial
+  /*
   String strc1 = "Temp1:";
   String strh1 = "Humidity1:";
   String str1 = strc1 + c1 + strh1 +h1;
   Serial.println(str1);
+  */
   }
   
   //Sensor 2
@@ -65,14 +70,24 @@ void loop() {
     return;
   }else{
   // Print to Serial
+  /*
   String strc2 = "Temp2:";
   String strh2 = "Humidity2:";
   String str2 = strc2 + c2 + strh2 +h2;
   Serial.println(str2);
+  */
   }
-  Serial.println();
-  
-  
+  //print to excel by PLX-DAQ
+  Serial.print("DATA");
+  Serial.print(",");
+  Serial.print(c1);
+  Serial.print(",");
+  Serial.print(h1);
+  Serial.print(",");
+  Serial.print(c2);
+  Serial.print(",");
+  Serial.println(h2);
+    
   // Print to LCD
   // set the cursor to column 0, line 1
   // (note: line 1 is the second row, since counting begins with 0):
