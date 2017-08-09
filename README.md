@@ -7,3 +7,9 @@ use 2*DH11 / 2x16 LCD / arduino UNO
 
 ## skinOily
 use Adafruit_TSL2561 / 2x16 I2C LCD / arduino UNO
+
+## skinColor
+### sKinMelanin
+### skinErythema
+
+## skinElasticity
